@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Script src="https://aframe.io/releases/0.7.1/aframe.min.js"></Script>
+        <Script src="https://unpkg.com/aframe-event-set-component@4.0.0/dist/aframe-event-set-component.min.js"></Script>
+        <Script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></Script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    </head>
+    <body>
+        <a-scene physics="gravity: -9.8; restitution: .7">
+            <a-assets>
+                <img id="ground" src="box.jpg">
+        </a-assets>
+        <a-entity progressive-controls position="0 0 7.5">
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+        <a-plane src="#ground" scale="30 30 8" repeat="5 5 2" rotation="-90 0 0" static-body></a-plane>
+            
+        <a-sphere color="lightgreen" radius="0.5" position="-2.8 4 1" 
+        grabbable dynamic-body="linearDamping: 0.01; mass: 50"></a-sphere>
+
+        <a-sphere color="lightblue" radius="0.5" position="-1 4 1" 
+        grabbable dynamic-body="linearDamping: .01; mass: 1"></a-sphere>
+
+        <a-box color="blue" position="1 1 1" height="1" width="1.5" depth="4" static-body></a-box>
+        </a-scene>
+    </body>
+</html>

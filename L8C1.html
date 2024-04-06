@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    </head>
+    <body>
+
+    <a-scene>
+        <a-entity>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+
+        <a-box id="blue" color="blue" position="0 3 -7"
+        event-set__blueinv="_event: click; visible: false"></a-box>
+
+        <a-box id="green" color="green" position="-2 3 -7">
+        </a-box>
+    
+        <a-box id="yellow" color="yellow" position="2 3 -7"
+        event-set__respos="_event: click; _target: #green; position: -2 3 -7">      
+        </a-box>
+    
+        <a-box id="red" color="red" position="-2 0 -7"
+        event-set__closepink="_event: mouseenter; material.color:lightblue"
+        event-set__awayred="_event: mouseleave; material.color:red">
+        </a-box>
+
+    
+        <a-box id="pink" color="pink" position="0 0 -7"
+        event-set_bluevis="_event: click; _target: #blue; visible: true"></a-box>
+    
+        <a-box id="purple" color="purple" position="2 0 -7"
+        event-set__tarpurple="_event: click; _target: #green; position: -2 3 -5;"></a-box>
+    
+
+
+    </a-scene> 
+    </body>
+
+
+
+
+
+</html>
